@@ -87,7 +87,7 @@ namespace HeliBlades
                 float velocityCoeficient = Mathf.Clamp01(targetDistance / breakRadius);
                 _velocity = Vector3.ClampMagnitude(_velocity + steering , maxVelocity * velocityCoeficient);
                 vehicleTransform.position += _velocity * Time.deltaTime;
-                vehicleTransform.rotation = Quaternion.LookRotation(_velocity);
+                vehicleTransform.rotation = Quaternion.LookRotation(desiredVelocity);
                 velocityMagnitude = _velocity.magnitude;
 
                 yield return null;
