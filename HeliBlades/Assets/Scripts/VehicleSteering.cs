@@ -28,7 +28,8 @@ namespace HeliBlades
         public float maxVelocity = 30.0f;
         public float maxForce = 500.0f;
         public float stopRadius = 1.0f;
-        public float breakRadius = 100.0f;
+        public float breakRadius = 25.0f;
+        public float velocityMagnitude;
 #endregion
 
 
@@ -41,6 +42,13 @@ namespace HeliBlades
 
 
 #region Public methods and properties
+        [ContextMenu("Move To Origin")]
+        public void MoveToOrigin()
+        {
+            MoveTo(Vector3.zero);
+        }
+
+
         public void MoveTo(Vector3 target)
         {
             if(_moveRoutineInstance != null)
@@ -69,17 +77,18 @@ namespace HeliBlades
             do
             {
                 targetDistance = Vector3.Distance(vehicleTransform.position, target);
-                float velocityCoeficient = Mathf.Clamp01(targetDistance / breakRadius);
                 Vector3 targetDirection = (target - vehicleTransform.position).normalized;
-                Vector3 desiredVelocity = targetDirection * maxVelocity * velocityCoeficient;
+                Vector3 desiredVelocity = targetDirection * maxVelocity;
                 Vector3 steering = desiredVelocity - _velocity;
 
                 steering = Vector3.ClampMagnitude(steering, maxForce);
                 steering = steering / mass;
 
-                _velocity = Vector3.ClampMagnitude(_velocity + steering , maxVelocity);
+                float velocityCoeficient = Mathf.Clamp01(targetDistance / breakRadius);
+                _velocity = Vector3.ClampMagnitude(_velocity + steering , maxVelocity * velocityCoeficient);
                 vehicleTransform.position += _velocity * Time.deltaTime;
                 vehicleTransform.rotation = Quaternion.LookRotation(_velocity);
+                velocityMagnitude = _velocity.magnitude;
 
                 yield return null;
             }
