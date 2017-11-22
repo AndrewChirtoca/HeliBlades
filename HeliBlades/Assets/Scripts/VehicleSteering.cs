@@ -28,7 +28,7 @@ namespace HeliBlades
         public float maxVelocity = 30.0f;
         public float maxForce = 500.0f;
         public float stopRadius = 1.0f;
-        public float breakRadius = 25.0f;
+        public float breakRadius = 10.0f;
         public float velocityMagnitude;
 #endregion
 
