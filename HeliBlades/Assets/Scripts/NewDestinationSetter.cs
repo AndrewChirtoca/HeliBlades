@@ -24,7 +24,6 @@ namespace HeliBlades
     {
 #region Public serialized variables
         public NavMeshAgent agent;
-        public Vector3Variable destinationLookup;
 #endregion
 
 
@@ -35,9 +34,9 @@ namespace HeliBlades
 
 
 #region Public methods and properties
-        public void LookupDestination()
+        public void SetDestination(Vector3Variable vector3var)
         {
-            agent.SetDestination(destinationLookup.value);
+            agent.SetDestination(vector3var.value);
         }
 #endregion
 
