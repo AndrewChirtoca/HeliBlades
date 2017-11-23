@@ -52,6 +52,8 @@ GameObject:
   - component: {fileID: 137456013387960676}
   - component: {fileID: 95522600419141760}
   - component: {fileID: 195695356369332006}
+  - component: {fileID: 114888202019587022}
+  - component: {fileID: 114124487383248296}
   m_Layer: 0
   m_Name: P_Helicopter
   m_TagString: Untagged
@@ -117,6 +119,47 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114124487383248296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509101694468636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20c2cc1e79f770740bf7eeb06f98b74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followedEvent: {fileID: 11400000, guid: 8c25874e6b9b03840a19562f2ce1b028, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114888202019587022}
+        m_MethodName: LookupDestination
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &114888202019587022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509101694468636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245b8090e7e3f6149b6c01b94aaa9f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 195695356369332006}
+  destinationLookup: {fileID: 11400000, guid: 34e21e5540e3a654c936713ee1412b96, type: 2}
 --- !u!137 &137456013387960676
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
