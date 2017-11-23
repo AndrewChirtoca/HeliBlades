@@ -12,6 +12,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 
 
@@ -23,10 +24,11 @@ namespace HeliBlades
     public class MouseRaycaster : MonoBehaviour
     {
 #region Public serialized variables
-        public NavMeshAgent agent;
         public Camera raycastCamera;
         public bool fallbackOnMainCam = true;
         public KeyCode trigger;
+        public Vector3Variable hitPosStorage;
+        public UnityEvent onRaycastHit;
 #endregion
 
 
@@ -55,7 +57,8 @@ namespace HeliBlades
 
                 if (Physics.Raycast(raycastCamera.ScreenPointToRay(Input.mousePosition), out hit, 100))
                 {
-                    agent.destination = hit.point;
+                    hitPosStorage.value = hit.point;
+                    onRaycastHit.Invoke();
                 }
             }
         }
