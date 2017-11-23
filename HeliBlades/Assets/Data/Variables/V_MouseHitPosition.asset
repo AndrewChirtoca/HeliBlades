@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8747fa17c746cd441ac25a8218101e97, type: 3}
+  m_Name: V_MouseHitPosition
+  m_EditorClassIdentifier: 
+  value: {x: 204.99368, y: -3.7689432e-17, z: 169.7381}
