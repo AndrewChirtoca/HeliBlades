@@ -2,7 +2,7 @@
 //
 //  vim: ft=cs tw=80
 //
-//  Date:    2017-11-24 01:19:13
+//  Date:    2017-11-24 03:38:16
 //  Creator: Chirtoca Andrei <andrewchirtoca@gmail.com>
 //
 //===----------------------------------------------------------------------===//
@@ -18,10 +18,10 @@ using UnityEngine.Events;
 namespace HeliBlades
 {
     /// <summary>
-    /// UnityEventVec3Var class.
+    /// UnityEventScriptableObject class.
     /// </summary>
     [Serializable]
-    public class UnityEventVec3Var : UnityEvent<Vector3Variable>
+    public class UnityEventScriptableObject : UnityEvent<ScriptableObject>
     {
 #region Public serialized variables
 #endregion
