@@ -2,7 +2,7 @@
 //
 //  vim: ft=cs tw=80
 //
-//  Date:    Insert datetime string (⇧⌘I or Ctrl+Shift+I)
+//  Date:    2017-11-24 03:48:40
 //  Creator: Chirtoca Andrei <andrewchirtoca@gmail.com>
 //
 //===----------------------------------------------------------------------===//
@@ -17,12 +17,12 @@ using System.Collections.Generic;
 namespace HeliBlades
 {
     /// <summary>
-    /// Vector3Variable class.
+    /// ScriptableObjectVariable class.
     /// </summary>
-    [CreateAssetMenu(fileName = "Vector3Variable", menuName = "Variables/Vector3")]
-    public class Vector3Variable : ScriptableObjectVariable<Vector3>
+    public abstract class ScriptableObjectVariable<T>: ScriptableObject
     {
 #region Public serialized variables
+        public T value;
 #endregion
 
 
@@ -33,6 +33,15 @@ namespace HeliBlades
 
 
 #region Public methods and properties
+        public void SetValue(T value)
+        {
+            this.value = value;
+        }
+
+        public void SetValue(ScriptableObjectVariable<T> value)
+        {
+            this.value = value.value;
+        }
 #endregion
 
 
