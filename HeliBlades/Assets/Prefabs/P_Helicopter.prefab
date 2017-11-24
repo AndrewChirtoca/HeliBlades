@@ -53,7 +53,10 @@ GameObject:
   - component: {fileID: 95522600419141760}
   - component: {fileID: 195695356369332006}
   - component: {fileID: 114888202019587022}
+  - component: {fileID: 114191666754163058}
+  - component: {fileID: 114470708224842526}
   - component: {fileID: 114124487383248296}
+  - component: {fileID: 114332220910178310}
   m_Layer: 0
   m_Name: P_Helicopter
   m_TagString: Untagged
@@ -141,6 +144,79 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 11400000, guid: 34e21e5540e3a654c936713ee1412b96,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: HeliBlades.Vector3Variable, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &114191666754163058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509101694468636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02de8d702441300408a7b76c33248b64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookTarget: {fileID: 0}
+  turnRate: 1
+--- !u!114 &114332220910178310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509101694468636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20c2cc1e79f770740bf7eeb06f98b74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followedEvent: {fileID: 11400000, guid: 8ef02758f78c4554fbeb1b3cd22820c4, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114191666754163058}
+        m_MethodName: SetLookTarget
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: d58d8c51ca673384aa0e0c64e77a898d,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: HeliBlades.GameObjectVariable, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &114470708224842526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509101694468636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 038f3f8e2e18c4b45b4eeb0b21273171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetablesSet: {fileID: 11400000, guid: fc31316c6e1a90a45ab7a8f05d440c62, type: 2}
+  maxRange: 100
+  selectedTarget: {fileID: 0}
+  selectedGameObject: {fileID: 11400000, guid: d58d8c51ca673384aa0e0c64e77a898d, type: 2}
+  onTargetSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 8ef02758f78c4554fbeb1b3cd22820c4, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
