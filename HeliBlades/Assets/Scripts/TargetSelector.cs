@@ -26,6 +26,7 @@ namespace HeliBlades
         public TargetablesRuntimeSet targetablesSet;
         public float maxRange = 100.0f;
         public TargetableEntity selectedTarget;
+        public GameObjectVariable selectedGameObject;
         public UnityEvent onTargetSelected;
 #endregion
 
@@ -62,6 +63,7 @@ namespace HeliBlades
         public void SelectTarget(TargetableEntity entity)
         {
             selectedTarget = entity;
+            selectedGameObject.value = (selectedTarget != null) ? selectedTarget.gameObject : null;
             onTargetSelected.Invoke();
         }
 
