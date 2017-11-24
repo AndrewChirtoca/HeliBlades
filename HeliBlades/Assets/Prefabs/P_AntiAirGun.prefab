@@ -53,6 +53,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4984371239539908}
+  - component: {fileID: 114960424050628652}
   m_Layer: 0
   m_Name: P_AntiAirGun
   m_TagString: Untagged
@@ -326,3 +327,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1764990552488172}
   m_Mesh: {fileID: 4300000, guid: 6f5930741c4ed7c4a907b7f2dd9983ac, type: 3}
+--- !u!114 &114960424050628652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1739490424954968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3605f1c09dca49c41bf506920c1331be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runtimeSet: {fileID: 11400000, guid: fc31316c6e1a90a45ab7a8f05d440c62, type: 2}
