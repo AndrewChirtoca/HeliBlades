@@ -34,12 +34,21 @@ namespace HeliBlades
 
 
 #region Public methods and properties
+        public void SetLookTarget(Transform target)
+        {
+            lookTarget = target;
+        }
+
+        public void SetLookTarget(GameObjectVariable target)
+        {
+            lookTarget = (target.value != null) ? target.value.transform : null;
+        }
 #endregion
 
 
 
 #region Monobehavior methods
-        public void Update()
+        private void Update()
         {
             if(lookTarget != null)
             {
