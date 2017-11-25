@@ -47,6 +47,11 @@ namespace HeliBlades
             onLaunch.Invoke();
             StartGuidance(target);
         }
+
+        public void DestroyGameObject(GameObject gameObj)
+        {
+            Destroy(gameObj);
+        }
 #endregion
 
 
