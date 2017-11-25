@@ -23,6 +23,7 @@ namespace HeliBlades
     {
 #region Public serialized variables
         public Projectile projectilePrefab;
+        public Transform launchPod;
 #endregion
 
 
@@ -35,8 +36,9 @@ namespace HeliBlades
 #region Public methods and properties
         public void LaunchProjectile()
         {
-            var pos = transform.TransformPoint(new Vector3(2.8f, -1.0f, 2.0f));
-            var instance = Instantiate(projectilePrefab, pos, transform.rotation);
+            var pos = launchPod.position;
+            var rot = launchPod.rotation;
+            var instance = Instantiate(projectilePrefab, pos, rot);
             instance.Launch();
         }
 #endregion
