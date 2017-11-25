@@ -27,7 +27,6 @@ namespace HeliBlades
 #region Public serialized variables
         public ProjectileGuide guidence;
         public UnityEvent onLaunch;
-        public UnityEvent onCollision;
 #endregion
 
 
@@ -47,20 +46,11 @@ namespace HeliBlades
             onLaunch.Invoke();
             StartGuidance(target);
         }
-
-        public void DestroyGameObject(GameObject gameObj)
-        {
-            Destroy(gameObj);
-        }
 #endregion
 
 
 
 #region Monobehavior methods
-        private void OnCollisionEnter(Collision collision)
-        {
-            onCollision.Invoke();
-        }
 #endregion
 
         private void StartGuidance(GameObjectVariable target)
