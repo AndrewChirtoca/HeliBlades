@@ -28,6 +28,7 @@ namespace HeliBlades
         public TargetableEntity selectedTarget;
         public GameObjectVariable selectedGameObject;
         public UnityEvent onTargetSelected;
+        public UnityEvent onExitTargeting;
 #endregion
 
 
@@ -81,6 +82,7 @@ namespace HeliBlades
         public void ExitTargeting()
         {
             SelectTarget(null);
+            onExitTargeting.Invoke();
         }
 
         [ContextMenu("Next Target")]
@@ -91,7 +93,6 @@ namespace HeliBlades
             var newTarget = _targetsInRange[targetIndex];
             SelectTarget(newTarget);
         }
-
 
         [ContextMenu("Previous Target")]
         public void PreviousTarget()
@@ -106,6 +107,25 @@ namespace HeliBlades
 
 
 #region Monobehavior methods
+        private void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.C))
+            {
+                EnterTargeting();
+            }
+            else if(Input.GetKeyDown(KeyCode.E))
+            {
+                ExitTargeting();
+            }
+            else if(Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                NextTarget();
+            }
+            else if(Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                PreviousTarget();
+            }
+        }
 #endregion
     }
 }
