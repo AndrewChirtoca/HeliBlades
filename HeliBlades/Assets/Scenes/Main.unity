@@ -108,48 +108,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 23800000, guid: f4e0e048863b85249b49e2e3cc1b7512, type: 2}
---- !u!1001 &55915871
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &172826609
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,11 +187,53 @@ Transform:
   m_GameObject: {fileID: 172826609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 100}
+  m_LocalScale: {x: 50, y: 1, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &235336907
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &656327704
 Prefab:
   m_ObjectHideFlags: 0
@@ -457,8 +457,12 @@ GameObject:
   - component: {fileID: 1136450218}
   - component: {fileID: 1136450217}
   - component: {fileID: 1136450216}
-  - component: {fileID: 1136450221}
+  - component: {fileID: 1136450224}
+  - component: {fileID: 1136450225}
   - component: {fileID: 1136450222}
+  - component: {fileID: 1136450223}
+  - component: {fileID: 1136450221}
+  - component: {fileID: 1136450226}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -529,13 +533,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1136450215}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.13088542, y: -0.8681629, z: 0.31598538, w: 0.3596048}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40, y: -135, z: 0}
 --- !u!114 &1136450221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,15 +548,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 1136450215}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55f633882ea6b4f45bf15eaa91f2d801, type: 3}
+  m_Script: {fileID: 11500000, guid: 20c2cc1e79f770740bf7eeb06f98b74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTransform: {fileID: 1920472722}
-  followOffset: {x: -12.5, y: 25, z: -12.5}
-  minDistance: 30
-  maxDistance: 60
-  moveDeltaCoef: 100
-  distanceStepPerSec: 0.5
+  followedEvent: {fileID: 11400000, guid: f1a9cf756cb099b4d8f88c6edccc3821, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1136450224}
+        m_MethodName: SetLookTarget
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 179e4fd0bb4e0e4459b4a2ec041572d3,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: HeliBlades.GameObjectVariable, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1136450225}
+        m_MethodName: set_Config
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: a8b79eb6ebc18af4099cc90536eda0e4,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: HeliBlades.FollowLeaderConfig, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &1136450222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,6 +605,114 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &1136450223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1136450215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20c2cc1e79f770740bf7eeb06f98b74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followedEvent: {fileID: 11400000, guid: 8ef02758f78c4554fbeb1b3cd22820c4, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1136450224}
+        m_MethodName: SetLookTarget
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: d58d8c51ca673384aa0e0c64e77a898d,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: HeliBlades.GameObjectVariable, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1136450225}
+        m_MethodName: set_Config
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 68ebc35f7cfc90a4290826221ae06349,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: HeliBlades.FollowLeaderConfig, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &1136450224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1136450215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02de8d702441300408a7b76c33248b64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookTarget: {fileID: 0}
+  turnRate: 1
+--- !u!114 &1136450225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1136450215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e381395de42f48438f55311a37344e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leader: {fileID: 0}
+  config: {fileID: 11400000, guid: a8b79eb6ebc18af4099cc90536eda0e4, type: 2}
+--- !u!114 &1136450226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1136450215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20c2cc1e79f770740bf7eeb06f98b74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followedEvent: {fileID: 11400000, guid: 5425562043f4ec048ad9512106bddc95, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1136450225}
+        m_MethodName: SetLeader
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 179e4fd0bb4e0e4459b4a2ec041572d3,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: HeliBlades.GameObjectVariable, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1136450224}
+        m_MethodName: SetLookTarget
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 179e4fd0bb4e0e4459b4a2ec041572d3,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: HeliBlades.GameObjectVariable, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -630,8 +766,3 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd436c79937297a4587a217477017451, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1920472722 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4854480378961716, guid: 6cd22f3bedb425e419a7145d90cb901f,
-    type: 2}
-  m_PrefabInternal: {fileID: 55915871}
