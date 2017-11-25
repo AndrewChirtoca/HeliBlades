@@ -35,6 +35,16 @@ namespace HeliBlades
 
 
 #region Public methods and properties
+        public void SetLeader(Transform newLeader)
+        {
+            leader = newLeader;
+        }
+
+        public void SetLeader(GameObject newLeader)
+        {
+            leader = newLeader.transform;
+        }
+
         public void SetFollowConfig(FollowLeaderConfig newConfig)
         {
             config = newConfig;
