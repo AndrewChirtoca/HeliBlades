@@ -91,7 +91,7 @@ namespace HeliBlades
             RemoveInvalidTargets();
             int targetIndex = _targetsInRange.IndexOf(selectedTarget);
             targetIndex = (targetIndex < _targetsInRange.Count - 1) ? ++targetIndex : 0;
-            var newTarget = _targetsInRange[targetIndex];
+            var newTarget = (_targetsInRange.Count > 0) ? _targetsInRange[targetIndex] : null;
             SelectTarget(newTarget);
         }
 
@@ -101,7 +101,7 @@ namespace HeliBlades
             RemoveInvalidTargets();
             int targetIndex = _targetsInRange.IndexOf(selectedTarget);
             targetIndex = (targetIndex > 0) ? --targetIndex : _targetsInRange.Count - 1;
-            var newTarget = _targetsInRange[targetIndex];
+            var newTarget = (_targetsInRange.Count > 0) ? _targetsInRange[targetIndex] : null;
             SelectTarget(newTarget);
         }
 #endregion
