@@ -173,14 +173,16 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1509101694468636}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34ca86527d074cc498c62378bb59dafb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 11400000, guid: d58d8c51ca673384aa0e0c64e77a898d, type: 2}
   projectilePrefab: {fileID: 114398290856093676, guid: bc7457918a923714599fa4fc47cf4de5,
     type: 2}
   launchPod: {fileID: 4626364347626996}
+  trigger: 32
 --- !u!114 &114124487383248296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -348,6 +350,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114000571675746168}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   onExitTargeting:
@@ -356,6 +369,17 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: f1a9cf756cb099b4d8f88c6edccc3821, type: 2}
         m_MethodName: Raise
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114000571675746168}
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

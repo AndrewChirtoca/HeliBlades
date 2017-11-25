@@ -22,6 +22,7 @@ namespace HeliBlades
     public class ProjectileLauncher : MonoBehaviour
     {
 #region Public serialized variables
+        public GameObjectVariable target;
         public Projectile projectilePrefab;
         public Transform launchPod;
         public KeyCode trigger;
@@ -37,24 +38,38 @@ namespace HeliBlades
 #region Public methods and properties
         public void LaunchProjectile()
         {
+            if(!PreLaunchCheck())
+            {
+                var msg = "Pre launch check failed. The target seems invalid. Aborting.";
+                Debug.LogWarning(msg);
+                return;
+            }
+
             var pos = launchPod.position;
             var rot = launchPod.rotation;
             var instance = Instantiate(projectilePrefab, pos, rot);
-            instance.Launch();
+            instance.Launch(target);
         }
 #endregion
 
 
 
 #region Monobehavior methods
-#endregion
-
         private void Update()
         {
             if(Input.GetKeyDown(trigger))
             {
                 LaunchProjectile();
             }
+        }
+#endregion
+
+
+        private bool PreLaunchCheck()
+        {
+            bool targetRefOK = (target != null);
+            bool targetValOK = (target.value != null);
+            return targetRefOK && targetValOK;
         }
     }
 }

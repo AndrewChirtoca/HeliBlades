@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.Events;
+using UnityEngine.Assertions;
 
 
 
@@ -24,7 +25,6 @@ namespace HeliBlades
     public class Projectile : MonoBehaviour
     {
 #region Public serialized variables
-        public GameObjectVariable target;
         public ProjectileGuide guidence;
         public UnityEvent onLaunch;
         public UnityEvent onCollision;
@@ -40,17 +40,12 @@ namespace HeliBlades
 
 #region Public methods and properties
         [ContextMenu("Launch")]
-        public void Launch()
+        public void Launch(GameObjectVariable target)
         {
-            if(_guidanceRoutineInst != null)
-            {
-                var msg = "Attempt on repeated projectile launch. Guidance in progress. Aborting.";
-                Debug.LogWarning(msg);
-                return;
-            }
-
+            var msg = "Attempt on repeated launch of the same projectile.";
+            Assert.IsTrue(_guidanceRoutineInst == null, msg);
             onLaunch.Invoke();
-            StartGuidance();
+            StartGuidance(target);
         }
 #endregion
 
@@ -63,7 +58,7 @@ namespace HeliBlades
         }
 #endregion
 
-        private void StartGuidance()
+        private void StartGuidance(GameObjectVariable target)
         {
             _guidanceRoutineInst = StartCoroutine(guidence.GuidanceRoutine(this.gameObject, target));
         }
