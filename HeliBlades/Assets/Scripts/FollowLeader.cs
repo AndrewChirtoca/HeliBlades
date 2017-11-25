@@ -45,9 +45,21 @@ namespace HeliBlades
             leader = newLeader.transform;
         }
 
-        public void SetFollowConfig(FollowLeaderConfig newConfig)
+        public void SetLeader(GameObjectVariable newLeader)
         {
-            config = newConfig;
+            leader = newLeader.value.transform;
+        }
+
+        public FollowLeaderConfig Config
+        {
+            set
+            {
+                config = value;
+            }
+            get
+            {
+                return config;
+            }
         }
 #endregion
 
@@ -56,11 +68,14 @@ namespace HeliBlades
 #region Monobehavior methods
         private void Update()
         {
-            Vector3 finalPos = (config.space == Space.Self) ?
-                leader.TransformPoint(config.followOffset) :
-                leader.position + config.followOffset;
-            float t = config.moveRate * Time.deltaTime;
-            transform.position = Vector3.Lerp(transform.position, finalPos, t);
+            if(leader != null)
+            {
+                Vector3 finalPos = (config.space == Space.Self) ?
+                    leader.TransformPoint(config.followOffset) :
+                    leader.position + config.followOffset;
+                float t = config.moveRate * Time.deltaTime;
+                transform.position = Vector3.Lerp(transform.position, finalPos, t);
+            }
         }
 #endregion
     }
