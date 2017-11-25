@@ -24,9 +24,7 @@ namespace HeliBlades
     {
 #region Public serialized variables
         public Transform leader;
-        public float moveRate;
-        public Space space;
-        public Vector3 followOffset;
+        public FollowLeaderConfig config;
 #endregion
 
 
@@ -37,6 +35,10 @@ namespace HeliBlades
 
 
 #region Public methods and properties
+        public void SetFollowConfig(FollowLeaderConfig newConfig)
+        {
+            config = newConfig;
+        }
 #endregion
 
 
@@ -44,10 +46,10 @@ namespace HeliBlades
 #region Monobehavior methods
         private void Update()
         {
-            Vector3 finalPos = (space == Space.Self) ?
-                leader.TransformPoint(followOffset) :
-                leader.position + followOffset;
-            float t = moveRate * Time.deltaTime;
+            Vector3 finalPos = (config.space == Space.Self) ?
+                leader.TransformPoint(config.followOffset) :
+                leader.position + config.followOffset;
+            float t = config.moveRate * Time.deltaTime;
             transform.position = Vector3.Lerp(transform.position, finalPos, t);
         }
 #endregion
