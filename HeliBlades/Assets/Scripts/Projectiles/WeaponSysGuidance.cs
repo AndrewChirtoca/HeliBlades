@@ -19,10 +19,10 @@ using UnityEngine.Assertions;
 namespace HeliBlades
 {
     /// <summary>
-    /// WeaponSySGuidance class.
+    /// WeaponSysGuidance class.
     /// </summary>
     [CreateAssetMenu(fileName = "WeaponSysGuidance", menuName = "Projectiles/Weapon Sys Guidance")]
-    public class WeaponSySGuidance : ProjectileGuide
+    public class WeaponSysGuidance : ProjectileGuide
     {
 #region Public serialized variables
         public float force;

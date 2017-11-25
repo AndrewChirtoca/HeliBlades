@@ -8,7 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: d4eb0d3897f988e4099f2309afbd9269, type: 3}
   m_Name: WeaponSysGuidance
-  m_EditorClassIdentifier: Assembly-CSharp:HeliBlades:WeaponSySGuidance
-  force: 30
+  m_EditorClassIdentifier: 
+  force: 50
+  mode: 1
