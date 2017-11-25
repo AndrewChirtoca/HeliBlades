@@ -24,6 +24,7 @@ namespace HeliBlades
 #region Public serialized variables
         public Projectile projectilePrefab;
         public Transform launchPod;
+        public KeyCode trigger;
 #endregion
 
 
@@ -50,7 +51,7 @@ namespace HeliBlades
 
         private void Update()
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            if(Input.GetKeyDown(trigger))
             {
                 LaunchProjectile();
             }
