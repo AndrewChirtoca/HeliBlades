@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b91a3fcd250610d41a10484d6a5b41d6, type: 3}
   m_Name: WorldFarTopFollow
   m_EditorClassIdentifier: 
-  moveRate: 10
+  moveRate: 5
   space: 0
-  followOffset: {x: 12.5, y: 25, z: 12.5}
+  followOffset: {x: 20, y: 40, z: 20}
