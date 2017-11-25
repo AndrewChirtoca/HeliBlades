@@ -51,10 +51,14 @@ namespace HeliBlades
             var rigidBody = projInst.GetComponent<Rigidbody>();
             var msg = "No rigidbody component found on projectile. This guidance method requires one.";
             Assert.IsTrue(rigidBody != null, msg);
+            Vector3 targetPos = target.value.transform.position;
             while(true)
             {
-                Transform targetTrans = target.value.transform;
-                Vector3 targetDir = targetTrans.position - projTrans.position;
+                if(target.value != null)
+                {
+                    targetPos = target.value.transform.position;
+                }
+                Vector3 targetDir = targetPos - projTrans.position;
                 Vector3 appliedForce = targetDir.normalized * force * Time.fixedDeltaTime;
                 projTrans.LookAt(projTrans.position + rigidBody.velocity);
                 rigidBody.AddForce(appliedForce, mode);
