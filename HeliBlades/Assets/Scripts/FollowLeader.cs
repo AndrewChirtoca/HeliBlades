@@ -47,7 +47,7 @@ namespace HeliBlades
 
         public void SetLeader(GameObjectVariable newLeader)
         {
-            leader = newLeader.value.transform;
+            leader = (newLeader.value != null) ? newLeader.value.transform : null;
         }
 
         public FollowLeaderConfig Config
