@@ -88,6 +88,7 @@ namespace HeliBlades
         [ContextMenu("Next Target")]
         public void NextTarget()
         {
+            RemoveInvalidTargets();
             int targetIndex = _targetsInRange.IndexOf(selectedTarget);
             targetIndex = (targetIndex < _targetsInRange.Count - 1) ? ++targetIndex : 0;
             var newTarget = _targetsInRange[targetIndex];
@@ -97,6 +98,7 @@ namespace HeliBlades
         [ContextMenu("Previous Target")]
         public void PreviousTarget()
         {
+            RemoveInvalidTargets();
             int targetIndex = _targetsInRange.IndexOf(selectedTarget);
             targetIndex = (targetIndex > 0) ? --targetIndex : _targetsInRange.Count - 1;
             var newTarget = _targetsInRange[targetIndex];
@@ -127,5 +129,16 @@ namespace HeliBlades
             }
         }
 #endregion
+
+        private void RemoveInvalidTargets()
+        {
+            for(int i = _targetsInRange.Count - 1; i >=0; i--)
+            {
+                if(_targetsInRange[i] == null)
+                {
+                    _targetsInRange.RemoveAt(i);
+                }
+            }
+        }
     }
 }
