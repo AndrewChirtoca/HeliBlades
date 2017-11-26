@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookTarget: {fileID: 0}
-  turnRate: 1
+  turnRate: 0.1
   freezeRotX: 0
   freezeRotY: 1
   freezeRotZ: 1
@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookTarget: {fileID: 0}
-  turnRate: 1
+  turnRate: 0.1
   freezeRotX: 1
   freezeRotY: 0
   freezeRotZ: 1
