@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leadRefStorage: {fileID: 11400000, guid: 179e4fd0bb4e0e4459b4a2ec041572d3, type: 2}
-  onObjectRegistered:
+  onPawnRegister:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 5425562043f4ec048ad9512106bddc95, type: 2}

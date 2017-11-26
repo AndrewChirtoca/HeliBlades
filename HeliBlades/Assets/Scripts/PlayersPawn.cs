@@ -18,13 +18,13 @@ using UnityEngine.Events;
 namespace HeliBlades
 {
     /// <summary>
-    /// DefaultCameraLeader class.
+    /// PlayersPawn class.
     /// </summary>
-    public class DefaultCameraLeader : MonoBehaviour
+    public class PlayersPawn : MonoBehaviour
     {
 #region Public serialized variables
         public GameObjectVariable leadRefStorage;
-        public UnityEvent onObjectRegistered;
+        public UnityEvent onPawnRegister;
 #endregion
 
 
@@ -36,10 +36,10 @@ namespace HeliBlades
 
 
 #region Public methods and properties
-        public void RegisterCameraLeader(DefaultCameraLeader leader)
+        public void RegisterPlayer(PlayersPawn player)
         {
-            leadRefStorage.value = (leader != null) ? leader.gameObject : null;
-            onObjectRegistered.Invoke();
+            leadRefStorage.value = (player != null) ? player.gameObject : null;
+            onPawnRegister.Invoke();
         }
 #endregion
 
@@ -48,12 +48,12 @@ namespace HeliBlades
 #region Monobehavior methods
         public void OnEnable()
         {
-            RegisterCameraLeader(this);
+            RegisterPlayer(this);
         }
 
         public void OnDisable()
         {
-            RegisterCameraLeader(null);
+            RegisterPlayer(null);
         }
 #endregion
     }
