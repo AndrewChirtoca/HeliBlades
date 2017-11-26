@@ -84,11 +84,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4984371239539908}
-  - component: {fileID: 65268062957548458}
   - component: {fileID: 114960424050628652}
   - component: {fileID: 114380336066139980}
   - component: {fileID: 114652304280950378}
   - component: {fileID: 114209862694282340}
+  - component: {fileID: 136608963085396570}
   m_Layer: 0
   m_Name: P_AntiAirGun
   m_TagString: Untagged
@@ -195,7 +195,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536179170838812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.69, z: 2}
+  m_LocalPosition: {x: 0, y: 1.69, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4372511631252758}
@@ -391,18 +391,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1764990552488172}
   m_Mesh: {fileID: 4300000, guid: 6f5930741c4ed7c4a907b7f2dd9983ac, type: 3}
---- !u!65 &65268062957548458
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1739490424954968}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4, y: 7, z: 4}
-  m_Center: {x: 0, y: 3.5, z: 0}
 --- !u!114 &114209862694282340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -507,3 +495,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runtimeSet: {fileID: 11400000, guid: fc31316c6e1a90a45ab7a8f05d440c62, type: 2}
+--- !u!136 &136608963085396570
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1739490424954968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.7
+  m_Height: 7
+  m_Direction: 1
+  m_Center: {x: 0, y: 3.5, z: 0}
