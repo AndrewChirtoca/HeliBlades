@@ -29,6 +29,7 @@ namespace HeliBlades
         public LookAt yAxisRotator;
         public LookAt xAxisRotator;
         public Transform launchPod;
+        public GameObjectVariable playersTarget;
 #endregion
 
 
@@ -40,8 +41,10 @@ namespace HeliBlades
 
 
 #region Public methods and properties
-        public void AimAndShoot(GameObjectVariable target)
+        public void Retaliate(GameObjectVariable target)
         {
+            if(playersTarget.value != gameObject)
+                return;
             Aim(target);
             StartShooting();
         }

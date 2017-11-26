@@ -407,7 +407,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114652304280950378}
-        m_MethodName: AimAndShoot
+        m_MethodName: Retaliate
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 179e4fd0bb4e0e4459b4a2ec041572d3,
@@ -467,6 +467,7 @@ MonoBehaviour:
   yAxisRotator: {fileID: 114926101205648660}
   xAxisRotator: {fileID: 114425222031560836}
   launchPod: {fileID: 4488419043219992}
+  playersTarget: {fileID: 11400000, guid: d58d8c51ca673384aa0e0c64e77a898d, type: 2}
 --- !u!114 &114926101205648660
 MonoBehaviour:
   m_ObjectHideFlags: 1
