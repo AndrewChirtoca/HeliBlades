@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 95522600419141760}
   - component: {fileID: 195695356369332006}
   - component: {fileID: 65029693590938596}
+  - component: {fileID: 54673966678050700}
   - component: {fileID: 114214225967820240}
   - component: {fileID: 114220837583160760}
   - component: {fileID: 114888202019587022}
@@ -139,6 +140,21 @@ Transform:
   m_Father: {fileID: 4854480378961716}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54673966678050700
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509101694468636}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65029693590938596
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -420,7 +436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetablesSet: {fileID: 11400000, guid: fc31316c6e1a90a45ab7a8f05d440c62, type: 2}
-  maxRange: 100
+  maxRange: 75
   selectedTarget: {fileID: 0}
   selectedGameObject: {fileID: 11400000, guid: d58d8c51ca673384aa0e0c64e77a898d, type: 2}
   onTargetSelected:
@@ -544,7 +560,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1509101694468636}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 7
+  m_Radius: 5
   m_Speed: 30
   m_Acceleration: 10
   avoidancePriority: 50
@@ -553,7 +569,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 15
+  m_Height: 12
   m_BaseOffset: 10
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

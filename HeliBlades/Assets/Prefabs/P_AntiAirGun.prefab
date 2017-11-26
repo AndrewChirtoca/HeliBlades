@@ -87,8 +87,8 @@ GameObject:
   - component: {fileID: 114960424050628652}
   - component: {fileID: 114380336066139980}
   - component: {fileID: 114652304280950378}
-  - component: {fileID: 114209862694282340}
   - component: {fileID: 136608963085396570}
+  - component: {fileID: 135123328241246358}
   m_Layer: 0
   m_Name: P_AntiAirGun
   m_TagString: Untagged
@@ -391,35 +391,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1764990552488172}
   m_Mesh: {fileID: 4300000, guid: 6f5930741c4ed7c4a907b7f2dd9983ac, type: 3}
---- !u!114 &114209862694282340
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1739490424954968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20c2cc1e79f770740bf7eeb06f98b74e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followedEvent: {fileID: 11400000, guid: 8ef02758f78c4554fbeb1b3cd22820c4, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114652304280950378}
-        m_MethodName: Retaliate
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 179e4fd0bb4e0e4459b4a2ec041572d3,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: HeliBlades.GameObjectVariable, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!114 &114380336066139980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -467,7 +438,6 @@ MonoBehaviour:
   yAxisRotator: {fileID: 114926101205648660}
   xAxisRotator: {fileID: 114425222031560836}
   launchPod: {fileID: 4488419043219992}
-  playersTarget: {fileID: 11400000, guid: d58d8c51ca673384aa0e0c64e77a898d, type: 2}
 --- !u!114 &114926101205648660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -496,6 +466,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runtimeSet: {fileID: 11400000, guid: fc31316c6e1a90a45ab7a8f05d440c62, type: 2}
+--- !u!135 &135123328241246358
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1739490424954968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 50
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136608963085396570
 CapsuleCollider:
   m_ObjectHideFlags: 1

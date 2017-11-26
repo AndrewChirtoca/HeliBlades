@@ -29,26 +29,18 @@ namespace HeliBlades
         public LookAt yAxisRotator;
         public LookAt xAxisRotator;
         public Transform launchPod;
-        public GameObjectVariable playersTarget;
 #endregion
 
 
 
 #region Private variables
+        private PlayersPawn _playersPawn;
         private Coroutine _shootingRoutine;
 #endregion
 
 
 
 #region Public methods and properties
-        public void Retaliate(GameObjectVariable target)
-        {
-            if(playersTarget.value != gameObject)
-                return;
-            Aim(target);
-            StartShooting();
-        }
-
         public void Aim(GameObjectVariable target)
         {
             Aim(target.value.transform);
@@ -56,8 +48,16 @@ namespace HeliBlades
 
         public void Aim(Transform target)
         {
+            yAxisRotator.enabled = true;
+            xAxisRotator.enabled = true;
             yAxisRotator.SetLookTarget(target);
             xAxisRotator.SetLookTarget(target);
+        }
+
+        public void StopAim()
+        {
+            yAxisRotator.enabled = false;
+            xAxisRotator.enabled = false;
         }
 
         public void StartShooting()
@@ -78,6 +78,24 @@ namespace HeliBlades
 
 
 #region Monobehavior methods
+        private void OnTriggerEnter(Collider other)
+        {
+            _playersPawn = other.GetComponent<PlayersPawn>();
+            if(_playersPawn != null)
+            {
+                Aim(_playersPawn.transform);
+                StartShooting();
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if(_playersPawn != null && _playersPawn.gameObject == other.gameObject)
+            {
+                StopAim();
+                StopShooting();
+            }
+        }
 #endregion
 
 
