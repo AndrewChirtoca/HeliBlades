@@ -23,7 +23,7 @@ namespace HeliBlades
     {
 #region Public serialized variables
         public GameObjectVariable target;
-        public Projectile projectilePrefab;
+        public ProjectileFlight projectilePrefab;
         public Transform launchPod;
         public KeyCode trigger;
 #endregion

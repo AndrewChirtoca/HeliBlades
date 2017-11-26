@@ -20,11 +20,12 @@ using UnityEngine.Assertions;
 namespace HeliBlades
 {
     /// <summary>
-    /// Projectile class.
+    /// ProjectileFlight class.
     /// </summary>
-    public class Projectile : MonoBehaviour
+    public class ProjectileFlight : MonoBehaviour
     {
 #region Public serialized variables
+        public float maxLifetime = 5.0f;
         public ProjectileGuide guidence;
         public UnityEvent onLaunch;
 #endregion
@@ -51,6 +52,10 @@ namespace HeliBlades
 
 
 #region Monobehavior methods
+        private void Start()
+        {
+            Destroy(gameObject, maxLifetime);
+        }
 #endregion
 
         private void StartGuidance(GameObjectVariable target)
