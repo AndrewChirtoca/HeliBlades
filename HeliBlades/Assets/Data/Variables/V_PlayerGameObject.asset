@@ -9,6 +9,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b422740bcb5867f47a635e11b547d0ff, type: 3}
-  m_Name: V_DefaultCameraLeader
+  m_Name: V_PlayerGameObject
   m_EditorClassIdentifier: 
   value: {fileID: 0}

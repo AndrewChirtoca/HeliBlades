@@ -9,5 +9,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a80e6c142a83528468fd2c2c704eea30, type: 3}
-  m_Name: E_CameraLeadRegistered
+  m_Name: E_PlayerPawnRegister
   m_EditorClassIdentifier: 
