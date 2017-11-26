@@ -17,6 +17,13 @@ using System.Collections;
 
 namespace HeliBlades
 {
+    public enum EUpdateMethod
+    {
+        RegularUpdate,
+        FixiedUpdate
+    }
+
+
     /// <summary>
     /// FollowLeader class.
     /// </summary>
@@ -24,6 +31,7 @@ namespace HeliBlades
     {
 #region Public serialized variables
         public Transform leader;
+        public EUpdateMethod updateMethod;
         public FollowLeaderConfig config;
 #endregion
 
@@ -68,6 +76,19 @@ namespace HeliBlades
 #region Monobehavior methods
         private void Update()
         {
+            if(updateMethod == EUpdateMethod.RegularUpdate)
+                UpdatePosition();
+        }
+
+        private void FixedUpdate()
+        {
+            if(updateMethod == EUpdateMethod.FixiedUpdate)
+                UpdatePosition();
+        }
+#endregion
+
+        private void UpdatePosition()
+        {
             if(leader != null)
             {
                 Vector3 finalPos = (config.space == Space.Self) ?
@@ -77,6 +98,5 @@ namespace HeliBlades
                 transform.position = Vector3.Lerp(transform.position, finalPos, t);
             }
         }
-#endregion
     }
 }
