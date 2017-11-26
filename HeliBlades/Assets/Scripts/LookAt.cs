@@ -24,6 +24,9 @@ namespace HeliBlades
 #region Public serialized variables
         public Transform lookTarget;
         public float turnRate;
+        public bool freezeRotX = false;
+        public bool freezeRotY = false;
+        public bool freezeRotZ = false;
 #endregion
 
 
@@ -54,7 +57,14 @@ namespace HeliBlades
             {
                 var lookRot = Quaternion.LookRotation(lookTarget.position - transform.position);
                 float t = turnRate * Time.deltaTime;
-                transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, t);
+                var newRotation = Quaternion.Slerp(transform.rotation, lookRot, t);
+                Vector3 oldEulerRot = transform.rotation.eulerAngles;
+                Vector3 newEulerRot = newRotation.eulerAngles;
+                newRotation = Quaternion.Euler(
+                    (freezeRotX) ? oldEulerRot.x : newEulerRot.x,
+                    (freezeRotY) ? oldEulerRot.y : newEulerRot.y,
+                    (freezeRotZ) ? oldEulerRot.z : newEulerRot.z);
+                transform.rotation = newRotation;
             }
         }
 #endregion
