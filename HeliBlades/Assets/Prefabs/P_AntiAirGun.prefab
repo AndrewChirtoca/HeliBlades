@@ -89,7 +89,6 @@ GameObject:
   - component: {fileID: 114380336066139980}
   - component: {fileID: 114652304280950378}
   - component: {fileID: 114209862694282340}
-  - component: {fileID: 114863005845581758}
   m_Layer: 0
   m_Name: P_AntiAirGun
   m_TagString: Untagged
@@ -196,7 +195,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536179170838812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.69, z: 4.31}
+  m_LocalPosition: {x: 0, y: 1.69, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4372511631252758}
@@ -473,29 +472,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f195603cf2207db4891c5ae2395cb4d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingEffectPrefab: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
+  firingEffectPrefab: {fileID: 1000012600307132, guid: 20c0f7e297297fc468f9740f6bb08cb1,
     type: 2}
-  maxProjLifetime: 5
+  maxEffectLifetime: 10
   fireDelay: 3
   yAxisRotator: {fileID: 114926101205648660}
   xAxisRotator: {fileID: 114425222031560836}
   launchPod: {fileID: 4488419043219992}
---- !u!114 &114863005845581758
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1739490424954968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34ca86527d074cc498c62378bb59dafb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 11400000, guid: 179e4fd0bb4e0e4459b4a2ec041572d3, type: 2}
-  projectilePrefab: {fileID: 114398290856093676, guid: bc7457918a923714599fa4fc47cf4de5,
-    type: 2}
-  launchPod: {fileID: 4488419043219992}
-  trigger: 0
 --- !u!114 &114926101205648660
 MonoBehaviour:
   m_ObjectHideFlags: 1
