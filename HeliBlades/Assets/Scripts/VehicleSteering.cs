@@ -23,13 +23,18 @@ namespace HeliBlades
     public class VehicleSteering : MonoBehaviour
     {
 #region Public serialized variables
-        public Transform vehicleTransform;
+        //public Transform vehicleTransform;
         public float mass = 100.0f;
         public float maxVelocity = 30.0f;
         public float maxForce = 500.0f;
         public float stopRadius = 1.0f;
         public float breakRadius = 10.0f;
-        public float velocityMagnitude;
+        //public float velocityMagnitude;
+
+
+        public bool freezeX;
+        public bool freezeY;
+        public bool freezeZ;
 #endregion
 
 
@@ -48,6 +53,10 @@ namespace HeliBlades
             MoveTo(Vector3.zero);
         }
 
+        public void MoveTo(Vector3Variable target)
+        {
+            MoveTo(target.value);
+        }
 
         public void MoveTo(Vector3 target)
         {
@@ -73,11 +82,17 @@ namespace HeliBlades
         private IEnumerator MoveToRoutine(Vector3 target)
         {
             float targetDistance;
+            Vector3 currPos = transform.position;
+
+            target = new Vector3(
+                (freezeX) ? currPos.x : target.x,
+                (freezeY) ? currPos.y : target.y,
+                (freezeZ) ? currPos.z : target.z);
 
             do
             {
-                targetDistance = Vector3.Distance(vehicleTransform.position, target);
-                Vector3 targetDirection = (target - vehicleTransform.position).normalized;
+                targetDistance = Vector3.Distance(transform.position, target);
+                Vector3 targetDirection = (target - transform.position).normalized;
                 Vector3 desiredVelocity = targetDirection * maxVelocity;
                 Vector3 steering = desiredVelocity - _velocity;
 
@@ -86,9 +101,9 @@ namespace HeliBlades
 
                 float velocityCoeficient = Mathf.Clamp01(targetDistance / breakRadius);
                 _velocity = Vector3.ClampMagnitude(_velocity + steering , maxVelocity * velocityCoeficient);
-                vehicleTransform.position += _velocity * Time.deltaTime;
-                vehicleTransform.rotation = Quaternion.LookRotation(desiredVelocity);
-                velocityMagnitude = _velocity.magnitude;
+                transform.position += _velocity * Time.deltaTime;
+                transform.rotation = Quaternion.LookRotation(_velocity);
+                //velocityMagnitude = _velocity.magnitude;
 
                 yield return null;
             }
