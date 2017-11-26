@@ -23,7 +23,7 @@ namespace HeliBlades
     public class PlayersPawn : MonoBehaviour
     {
 #region Public serialized variables
-        public GameObjectVariable leadRefStorage;
+        public GameObjectVariable playersPawnGORef;
         public UnityEvent onPawnRegister;
 #endregion
 
@@ -38,7 +38,7 @@ namespace HeliBlades
 #region Public methods and properties
         public void RegisterPlayer(PlayersPawn player)
         {
-            leadRefStorage.value = (player != null) ? player.gameObject : null;
+            playersPawnGORef.value = (player != null) ? player.gameObject : null;
             onPawnRegister.Invoke();
         }
 #endregion

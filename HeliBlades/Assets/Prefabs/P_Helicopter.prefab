@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5fa9cf63531634d872596616037713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leadRefStorage: {fileID: 11400000, guid: 179e4fd0bb4e0e4459b4a2ec041572d3, type: 2}
+  playersPawnGORef: {fileID: 11400000, guid: 179e4fd0bb4e0e4459b4a2ec041572d3, type: 2}
   onPawnRegister:
     m_PersistentCalls:
       m_Calls:
