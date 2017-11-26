@@ -24,7 +24,7 @@ namespace HeliBlades
     {
 #region Public serialized variables
         public GameObject firingEffectPrefab;
-        public float maxProjLifetime = 5.0f;
+        public float maxEffectLifetime = 5.0f;
         public float fireDelay = 3.0f;
         public LookAt yAxisRotator;
         public LookAt xAxisRotator;
@@ -83,11 +83,10 @@ namespace HeliBlades
             while(true)
             {
                 yield return new WaitForSeconds(fireDelay);
-                //Vector3 pos = launchPod.position;
-                //Quaternion rot = launchPod.rotation;
-                //var bullet = Instantiate(firingEffectPrefab, pos, rot);
-                //Destroy(bullet, maxProjLifetime);
-                gameObject.GetComponent<ProjectileLauncher>().LaunchProjectile();
+                Vector3 pos = launchPod.position;
+                Quaternion rot = launchPod.rotation;
+                var effect = Instantiate(firingEffectPrefab, pos, rot);
+                Destroy(effect, maxEffectLifetime);
             }
         }
     }
