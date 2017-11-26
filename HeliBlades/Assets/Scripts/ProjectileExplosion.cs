@@ -50,7 +50,9 @@ namespace HeliBlades
                 Destroy(trailingParticles[i].gameObject, 3.0f);
             }
 
-            var explosionInst = Instantiate(explosionPrefab);
+            Vector3 pos = transform.position;
+            Quaternion rot = transform.rotation;
+            var explosionInst = Instantiate(explosionPrefab, pos, rot);
             Destroy(explosionInst, 3.0f);
             Destroy(gameObject);
         }

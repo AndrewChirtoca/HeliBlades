@@ -40,7 +40,9 @@ namespace HeliBlades
 #region Monobehavior methods
         private void OnCollisionEnter(Collision collision)
         {
-            var explosionInst = Instantiate(effectPrefab);
+            Vector3 pos = transform.position;
+            Quaternion rot = transform.rotation;
+            var explosionInst = Instantiate(effectPrefab, pos, rot);
             Destroy(explosionInst, 3.0f);
             Destroy(gameObject);
         }
