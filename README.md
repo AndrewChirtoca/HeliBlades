@@ -1,7 +1,7 @@
 # HeliBlades
 
-A small project exploring the benefits of scriptable objects in game arcitecture design.
-Fly around and explore the level, watch out for air defences.
+A small project exploring the benefits of scriptable objects in game architecture design.
+Fly around and explore the level, watch out for air defenses.
 
 ## Game Controls
 * W,A,S,D - movement
@@ -13,10 +13,10 @@ Fly around and explore the level, watch out for air defences.
 ## Architecture Brief
 * Cross object event based communication using scriptable objects(SO) as events to which listeners can register.
 * Runtime referencing using shared SO variable containers.
-* SO base runtime collections(sets) of entities that could substitute any requred manager or singleton script.
-* Features SO's designed to be configuration holders (contain data on which other scripts act upon)
-* Features SO's designed to implement a certain behaviour type/variation (contain logic & method implementation).
-* Game entitie's assembled through composition.
+* SO base runtime collections(sets) of entities that could substitute any required manager or singleton script.
+* Features SO designed to be configuration holders (contain data on which other scripts act upon)
+* Features SO designed to implement a certain behavior type/variation (contain logic & method implementation).
+* Game entities assembled through composition.
 
 ## Built With
 
