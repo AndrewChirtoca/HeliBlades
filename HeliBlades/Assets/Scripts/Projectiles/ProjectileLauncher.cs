@@ -25,7 +25,6 @@ namespace HeliBlades
         public GameObjectVariable target;
         public ProjectileFlight projectilePrefab;
         public Transform launchPod;
-        public KeyCode trigger;
 #endregion
 
 
@@ -57,7 +56,7 @@ namespace HeliBlades
 #region Monobehavior methods
         private void Update()
         {
-            if(Input.GetKeyDown(trigger))
+            if(Input.GetKeyDown(KeyCode.Space))
             {
                 LaunchProjectile();
             }

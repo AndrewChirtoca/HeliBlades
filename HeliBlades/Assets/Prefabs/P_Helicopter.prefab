@@ -51,12 +51,10 @@ GameObject:
   - component: {fileID: 4728620230059830}
   - component: {fileID: 137456013387960676}
   - component: {fileID: 95522600419141760}
-  - component: {fileID: 195695356369332006}
   - component: {fileID: 65029693590938596}
   - component: {fileID: 54673966678050700}
+  - component: {fileID: 114829602026083750}
   - component: {fileID: 114214225967820240}
-  - component: {fileID: 114220837583160760}
-  - component: {fileID: 114888202019587022}
   - component: {fileID: 114191666754163058}
   - component: {fileID: 114000571675746168}
   - component: {fileID: 114470708224842526}
@@ -105,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1509101694468636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10, z: -29.48}
+  m_LocalPosition: {x: 0, y: 13, z: -37.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4854480378961716}
@@ -279,7 +277,6 @@ MonoBehaviour:
   projectilePrefab: {fileID: 114398290856093676, guid: bc7457918a923714599fa4fc47cf4de5,
     type: 2}
   launchPod: {fileID: 4626364347626996}
-  trigger: 32
 --- !u!114 &114142715937137582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -321,9 +318,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lookTarget: {fileID: 0}
   turnRate: 1
-  freezeRotX: 0
+  freezeRotX: 1
   freezeRotY: 0
-  freezeRotZ: 0
+  freezeRotZ: 1
 --- !u!114 &114214225967820240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -345,38 +342,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
---- !u!114 &114220837583160760
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1509101694468636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 502db50ad70a49c44bff34643248c4a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raycastCamera: {fileID: 0}
-  fallbackOnMainCam: 1
-  trigger: 323
-  hitPosStorage: {fileID: 11400000, guid: 34e21e5540e3a654c936713ee1412b96, type: 2}
-  onRaycastHit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114888202019587022}
-        m_MethodName: SetDestination
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 34e21e5540e3a654c936713ee1412b96,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: HeliBlades.Vector3Variable, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -436,36 +401,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetablesSet: {fileID: 11400000, guid: fc31316c6e1a90a45ab7a8f05d440c62, type: 2}
-  maxRange: 75
-  selectedTarget: {fileID: 0}
+  maxRange: 100
   selectedGameObject: {fileID: 11400000, guid: d58d8c51ca673384aa0e0c64e77a898d, type: 2}
-  onTargetSelected:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 8ef02758f78c4554fbeb1b3cd22820c4, type: 2}
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114000571675746168}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   onExitTargeting:
     m_PersistentCalls:
       m_Calls:
@@ -491,9 +428,58 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114829602026083750}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!114 &114888202019587022
+  onNewTargetSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 8ef02758f78c4554fbeb1b3cd22820c4, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114000571675746168}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 114829602026083750}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &114829602026083750
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -501,10 +487,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1509101694468636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 245b8090e7e3f6149b6c01b94aaa9f97, type: 3}
+  m_Script: {fileID: 11500000, guid: 705c00effab91d04e8d62a5dab1bb8f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 195695356369332006}
+  speed: 25
+  turnSpeed: 90
 --- !u!137 &137456013387960676
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -512,11 +499,11 @@ SkinnedMeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1509101694468636}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 2100000, guid: e2392cb4c65800f4fb2d1c0aa286a6f9, type: 2}
   - {fileID: 2100000, guid: 1d6bd1a5b90087643a045531e98bef05, type: 2}
@@ -541,7 +528,7 @@ SkinnedMeshRenderer:
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
-  m_SkinnedMotionVectors: 1
+  m_SkinnedMotionVectors: 0
   m_Mesh: {fileID: 4300000, guid: 9f3635e7f3a5c1e4b8b34fa388f4c3eb, type: 3}
   m_Bones:
   - {fileID: 4854480378961716}
@@ -552,24 +539,3 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 7.046903, y: 5.8542833, z: 1.753622}
   m_DirtyAABB: 0
---- !u!195 &195695356369332006
-NavMeshAgent:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1509101694468636}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 5
-  m_Speed: 30
-  m_Acceleration: 10
-  avoidancePriority: 50
-  m_AngularSpeed: 200
-  m_StoppingDistance: 5
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 12
-  m_BaseOffset: 10
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4

@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leader: {fileID: 0}
+  updateMethod: 1
   config: {fileID: 11400000, guid: a8b79eb6ebc18af4099cc90536eda0e4, type: 2}
 --- !u!114 &114239449641704916
 MonoBehaviour:

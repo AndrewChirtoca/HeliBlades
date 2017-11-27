@@ -25,16 +25,16 @@ namespace HeliBlades
 #region Public serialized variables
         public TargetablesRuntimeSet targetablesSet;
         public float maxRange = 100.0f;
-        public TargetableEntity selectedTarget;
         public GameObjectVariable selectedGameObject;
-        public UnityEvent onTargetSelected;
         public UnityEvent onExitTargeting;
+        public UnityEvent onNewTargetSelected;
 #endregion
 
 
 
 #region Private variables
-        private List<TargetableEntity> _targetsInRange;
+        private TargetableEntity _selectedTarget;
+        private List<TargetableEntity> _targetsInRange = new List<TargetableEntity>();
 #endregion
 
 
@@ -63,9 +63,12 @@ namespace HeliBlades
 
         public void SelectTarget(TargetableEntity entity)
         {
-            selectedTarget = entity;
-            selectedGameObject.value = (selectedTarget != null) ? selectedTarget.gameObject : null;
-            onTargetSelected.Invoke();
+            _selectedTarget = entity;
+            selectedGameObject.value = (_selectedTarget != null) ? _selectedTarget.gameObject : null;
+            if(selectedGameObject.value != null)
+            {
+                onNewTargetSelected.Invoke();
+            }
         }
 
         [ContextMenu("Enter Targeting")]
@@ -81,6 +84,7 @@ namespace HeliBlades
         [ContextMenu("Exit Targeting")]
         public void ExitTargeting()
         {
+            _targetsInRange.Clear();
             SelectTarget(null);
             onExitTargeting.Invoke();
         }
@@ -89,7 +93,7 @@ namespace HeliBlades
         public void NextTarget()
         {
             RemoveInvalidTargets();
-            int targetIndex = _targetsInRange.IndexOf(selectedTarget);
+            int targetIndex = _targetsInRange.IndexOf(_selectedTarget);
             targetIndex = (targetIndex < _targetsInRange.Count - 1) ? ++targetIndex : 0;
             var newTarget = (_targetsInRange.Count > 0) ? _targetsInRange[targetIndex] : null;
             SelectTarget(newTarget);
@@ -99,7 +103,7 @@ namespace HeliBlades
         public void PreviousTarget()
         {
             RemoveInvalidTargets();
-            int targetIndex = _targetsInRange.IndexOf(selectedTarget);
+            int targetIndex = _targetsInRange.IndexOf(_selectedTarget);
             targetIndex = (targetIndex > 0) ? --targetIndex : _targetsInRange.Count - 1;
             var newTarget = (_targetsInRange.Count > 0) ? _targetsInRange[targetIndex] : null;
             SelectTarget(newTarget);
@@ -111,19 +115,19 @@ namespace HeliBlades
 #region Monobehavior methods
         private void Update()
         {
-            if(Input.GetKeyDown(KeyCode.C))
+            if(Input.GetKeyDown(KeyCode.E))
             {
                 EnterTargeting();
             }
-            else if(Input.GetKeyDown(KeyCode.E))
+            else if(Input.GetKeyDown(KeyCode.Q))
             {
                 ExitTargeting();
             }
-            else if(Input.GetKeyDown(KeyCode.RightArrow))
+            else if(Input.GetKeyDown(KeyCode.D))
             {
                 NextTarget();
             }
-            else if(Input.GetKeyDown(KeyCode.LeftArrow))
+            else if(Input.GetKeyDown(KeyCode.A))
             {
                 PreviousTarget();
             }
