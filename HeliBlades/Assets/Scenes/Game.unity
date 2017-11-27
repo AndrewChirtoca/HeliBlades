@@ -1105,7 +1105,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 13
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4728620230059830, guid: 6cd22f3bedb425e419a7145d90cb901f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1153,7 +1153,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!82 &990482394
 AudioSource:
