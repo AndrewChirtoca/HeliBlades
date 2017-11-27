@@ -21,7 +21,7 @@ Fly around and explore the level, watch out for air defenses.
 ## Built With
 
 The project was build using the Unity3D game engine version 2017.1.1f1.
-Unity3D download [page] (https://unity3d.com/get-unity/download/archive?_ga=2.246469572.1577312522.1511479487-1175513642.1507589093)
+Unity3D download [page](https://unity3d.com/get-unity/download/archive?_ga=2.246469572.1577312522.1511479487-1175513642.1507589093)
 
 ## Authors
 
